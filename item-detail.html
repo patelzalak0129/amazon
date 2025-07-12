@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Detail - ReWear</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/item-detail.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="nav-brand">
+                    <i class="fas fa-recycle"></i>
+                    <span>ReWear</span>
+                </a>
+                <div class="nav-links">
+                    <a href="browse.html" class="nav-link">← Back to Browse</a>
+                    <a href="dashboard.html" class="nav-link">Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="item-detail-container">
+        <div class="container">
+            <div class="item-detail-layout">
+                <!-- Image Gallery -->
+                <div class="image-gallery">
+                    <div class="main-image">
+                        <img id="mainImage" src="/placeholder.svg?height=600&width=600" alt="Item Image">
+                        <div class="image-nav">
+                            <button class="image-nav-btn prev" id="prevImageBtn">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="image-nav-btn next" id="nextImageBtn">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                        <div class="image-badge">
+                            <span class="badge badge-primary" id="pointsBadge">25 points</span>
+                        </div>
+                    </div>
+                    
+                    <div class="thumbnail-gallery" id="thumbnailGallery">
+                        <!-- Thumbnails will be loaded dynamically -->
+                    </div>
+                </div>
+
+                <!-- Item Details -->
+                <div class="item-details">
+                    <div class="item-header">
+                        <h1 id="itemTitle">Vintage Denim Jacket</h1>
+                        <div class="item-meta">
+                            <span id="itemViews">47 views</span>
+                            <span id="itemLikes">8 likes</span>
+                            <span id="itemDate">Posted Jan 15, 2024</span>
+                        </div>
+                        <div class="item-tags" id="itemTags">
+                            <!-- Tags will be loaded dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- Item Info Card -->
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <span class="info-label">Category</span>
+                                    <span class="info-value" id="itemCategory">Outerwear</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Size</span>
+                                    <span class="info-value" id="itemSize">M</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Condition</span>
+                                    <span class="info-value" id="itemCondition">Good</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Points</span>
+                                    <span class="info-value points" id="itemPoints">25</span>
+                                </div>
+                            </div>
+
+                            <div class="description-section">
+                                <h3>Description</h3>
+                                <p id="itemDescription">
+                                    Beautiful vintage denim jacket in excellent condition. This classic piece features 
+                                    authentic distressing and a timeless cut that works with any outfit.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- User Info Card -->
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="user-info">
+                                <div class="user-avatar">
+                                    <img src="/placeholder.svg?height=48&width=48" alt="User Avatar" id="userAvatar">
+                                    <div class="avatar-placeholder" id="userAvatarPlaceholder">SM</div>
+                                </div>
+                                <div class="user-details">
+                                    <h3 id="userName">Sarah M.</h3>
+                                    <div class="user-stats">
+                                        <span class="user-rating">
+                                            <i class="fas fa-star"></i>
+                                            <span id="userRating">4.8</span>
+                                        </span>
+                                        <span id="userSwaps">12 swaps</span>
+                                        <span id="userJoined">Joined March 2023</span>
+                                    </div>
+                                </div>
+                                <button class="btn btn-outline btn-sm">View Profile</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="action-buttons" id="actionButtons">
+                        <button class="btn btn-primary btn-lg w-full" id="swapBtn">
+                            <i class="fas fa-exchange-alt"></i>
+                            Request Swap
+                        </button>
+                        <button class="btn btn-outline btn-lg w-full" id="redeemBtn">
+                            <i class="fas fa-star"></i>
+                            Redeem for <span id="redeemPoints">25</span> Points
+                        </button>
+                        <div class="secondary-actions">
+                            <button class="btn btn-outline btn-sm">
+                                <i class="fas fa-heart"></i>
+                                Save
+                            </button>
+                            <button class="btn btn-outline btn-sm">
+                                <i class="fas fa-share"></i>
+                                Share
+                            </button>
+                            <button class="btn btn-outline btn-sm">
+                                <i class="fas fa-flag"></i>
+                                Report
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="unavailable-notice hidden" id="unavailableNotice">
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle"></i>
+                            This item is no longer available
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Swap Request Modal -->
+    <div class="modal" id="swapModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeSwapModal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-header">
+                <h2 class="modal-title">Request a Swap</h2>
+                <p class="modal-description">Send a message to request a swap for this item.</p>
+            </div>
+            <form id="swapForm">
+                <div class="form-group">
+                    <label for="swapMessage" class="form-label">Message (optional)</label>
+                    <textarea id="swapMessage" class="form-textarea" rows="4" 
+                              placeholder="Hi! I'm interested in swapping for your item. I have..."></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="submit" class="btn btn-primary">Send Request</button>
+                    <button type="button" class="btn btn-outline" id="cancelSwap">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Redeem Modal -->
+    <div class="modal" id="redeemModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeRedeemModal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-header">
+                <h2 class="modal-title">Redeem Item</h2>
+                <p class="modal-description">Use points to claim this item.</p>
+            </div>
+            <div class="redeem-info">
+                <div class="alert alert-success">
+                    <p>After redemption, the seller will be notified and you can arrange pickup/delivery.</p>
+                </div>
+                <div class="points-summary">
+                    <div class="points-row">
+                        <span>Current Points:</span>
+                        <span id="currentPoints">125</span>
+                    </div>
+                    <div class="points-row">
+                        <span>Item Cost:</span>
+                        <span id="itemCost">25</span>
+                    </div>
+                    <div class="points-row total">
+                        <span>Remaining Points:</span>
+                        <span id="remainingPoints">100</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-primary" id="confirmRedeem">Confirm Redemption</button>
+                <button class="btn btn-outline" id="cancelRedeem">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/item-detail.js"></script>
+</body>
+</html>

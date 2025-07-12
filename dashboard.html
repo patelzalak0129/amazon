@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - ReWear</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="nav-brand">
+                    <i class="fas fa-recycle"></i>
+                    <span>ReWear</span>
+                </a>
+                <div class="nav-links">
+                    <a href="browse.html" class="nav-link">Browse</a>
+                    <a href="list-item.html" class="btn btn-outline btn-sm">
+                        <i class="fas fa-plus"></i> List Item
+                    </a>
+                    <button class="btn btn-secondary btn-sm" id="settingsBtn">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                    <button class="btn btn-secondary btn-sm" id="logoutBtn">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <div class="container">
+            <div class="dashboard-layout">
+                <!-- Profile Sidebar -->
+                <div class="profile-sidebar">
+                    <div class="card">
+                        <div class="card-content profile-card">
+                            <div class="profile-avatar">
+                                <img src="/placeholder.svg?height=80&width=80" alt="Profile" id="profileAvatar">
+                                <div class="avatar-placeholder" id="avatarPlaceholder">AJ</div>
+                            </div>
+                            <h2 class="profile-name" id="profileName">Alex Johnson</h2>
+                            <p class="profile-email" id="profileEmail">alex@example.com</p>
+
+                            <div class="profile-stats">
+                                <div class="stat-card points-card">
+                                    <div class="stat-number" id="userPoints">125</div>
+                                    <div class="stat-label">Points Available</div>
+                                </div>
+
+                                <div class="stats-grid">
+                                    <div class="stat-item">
+                                        <div class="stat-number" id="totalSwaps">8</div>
+                                        <div class="stat-label">Swaps</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-number" id="itemsListed">12</div>
+                                        <div class="stat-label">Listed</div>
+                                    </div>
+                                </div>
+
+                                <div class="member-since" id="memberSince">Member since January 2024</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Content -->
+                <div class="main-content">
+                    <div class="dashboard-header">
+                        <h1>Dashboard</h1>
+                        <p>Manage your items, track swaps, and view your activity</p>
+                    </div>
+
+                    <!-- Tabs -->
+                    <div class="tabs">
+                        <div class="tab-list">
+                            <button class="tab-button active" data-tab="items">My Items</button>
+                            <button class="tab-button" data-tab="swaps">Swap History</button>
+                            <button class="tab-button" data-tab="profile">Profile Settings</button>
+                        </div>
+
+                        <!-- My Items Tab -->
+                        <div class="tab-content active" id="itemsTab">
+                            <div class="tab-header">
+                                <h2>Your Listed Items</h2>
+                                <a href="list-item.html" class="btn btn-primary">
+                                    <i class="fas fa-plus"></i> Add New Item
+                                </a>
+                            </div>
+
+                            <div class="items-grid" id="userItemsGrid">
+                                <!-- Items will be loaded dynamically -->
+                            </div>
+                        </div>
+
+                        <!-- Swap History Tab -->
+                        <div class="tab-content" id="swapsTab">
+                            <h2>Recent Activity</h2>
+                            <div class="swap-history" id="swapHistory">
+                                <!-- Swap history will be loaded dynamically -->
+                            </div>
+                        </div>
+
+                        <!-- Profile Settings Tab -->
+                        <div class="tab-content" id="profileTab">
+                            <h2>Profile Settings</h2>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Personal Information</h3>
+                                    <p class="card-description">Update your profile details</p>
+                                </div>
+                                <div class="card-content">
+                                    <form id="profileForm" class="profile-form">
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="editFirstName" class="form-label">First Name</label>
+                                                <input type="text" id="editFirstName" class="form-input" value="Alex">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="editLastName" class="form-label">Last Name</label>
+                                                <input type="text" id="editLastName" class="form-input" value="Johnson">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="editEmail" class="form-label">Email</label>
+                                            <input type="email" id="editEmail" class="form-input" value="alex@example.com">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

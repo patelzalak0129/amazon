@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - ReWear</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/admin.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="nav-brand">
+                    <i class="fas fa-recycle"></i>
+                    <span>ReWear Admin</span>
+                </a>
+                <div class="nav-links">
+                    <span class="badge badge-secondary">Admin Panel</span>
+                    <a href="dashboard.html" class="nav-link">Back to App</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="admin-container">
+        <div class="container">
+            <div class="admin-header">
+                <h1>Admin Dashboard</h1>
+                <p>Manage listings, users, and platform content</p>
+            </div>
+
+            <!-- Stats Overview -->
+            <div class="stats-overview">
+                <div class="stat-card">
+                    <div class="stat-content">
+                        <div class="stat-info">
+                            <p class="stat-label">Pending Reviews</p>
+                            <p class="stat-number" id="pendingCount">2</p>
+                        </div>
+                        <div class="stat-icon bg-blue">
+                            <i class="fas fa-box"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-content">
+                        <div class="stat-info">
+                            <p class="stat-label">Reported Items</p>
+                            <p class="stat-number" id="reportedCount">1</p>
+                        </div>
+                        <div class="stat-icon bg-red">
+                            <i class="fas fa-flag"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-content">
+                        <div class="stat-info">
+                            <p class="stat-label">Total Users</p>
+                            <p class="stat-number" id="usersCount">156</p>
+                        </div>
+                        <div class="stat-icon bg-green">
+                            <i class="fas fa-users"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-content">
+                        <div class="stat-info">
+                            <p class="stat-label">Active Listings</p>
+                            <p class="stat-number" id="listingsCount">89</p>
+                        </div>
+                        <div class="stat-icon bg-purple">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="admin-tabs">
+                <div class="tab-list">
+                    <button class="tab-button active" data-tab="pending">Pending Items</button>
+                    <button class="tab-button" data-tab="reported">Reported Content</button>
+                    <button class="tab-button" data-tab="users">User Management</button>
+                </div>
+
+                <!-- Pending Items Tab -->
+                <div class="tab-content active" id="pendingTab">
+                    <div class="tab-header">
+                        <h2>Items Awaiting Approval</h2>
+                        <div class="search-container">
+                            <div class="search-input">
+                                <i class="fas fa-search"></i>
+                                <input type="text" id="pendingSearch" class="form-input" placeholder="Search items...">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="admin-items-grid" id="pendingItemsGrid">
+                        <!-- Pending items will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Reported Content Tab -->
+                <div class="tab-content" id="reportedTab">
+                    <h2>Reported Content</h2>
+                    <div class="reported-items" id="reportedItemsList">
+                        <!-- Reported items will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- User Management Tab -->
+                <div class="tab-content" id="usersTab">
+                    <div class="tab-header">
+                        <h2>User Management</h2>
+                        <select id="userStatusFilter" class="form-select">
+                            <option value="all">All Users</option>
+                            <option value="active">Active</option>
+                            <option value="suspended">Suspended</option>
+                        </select>
+                    </div>
+
+                    <div class="users-list" id="usersList">
+                        <!-- Users will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rejection Modal -->
+    <div class="modal" id="rejectionModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeRejectionModal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-header">
+                <h2 class="modal-title">Reject Item</h2>
+                <p class="modal-description">Please provide a reason for rejecting this item. The user will be notified.</p>
+            </div>
+            <form id="rejectionForm">
+                <div class="form-group">
+                    <label for="rejectionReason" class="form-label">Rejection Reason</label>
+                    <textarea id="rejectionReason" class="form-textarea" rows="4" 
+                              placeholder="Please explain why this item cannot be approved..." required></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="submit" class="btn btn-danger">Reject Item</button>
+                    <button type="button" class="btn btn-outline" id="cancelRejection">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>

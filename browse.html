@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Items - ReWear</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/browse.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="nav-brand">
+                    <i class="fas fa-recycle"></i>
+                    <span>ReWear</span>
+                </a>
+                <div class="nav-links">
+                    <a href="dashboard.html" class="nav-link">Dashboard</a>
+                    <a href="list-item.html" class="nav-link">List Item</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="browse-container">
+        <div class="container">
+            <div class="browse-header">
+                <h1>Browse Items</h1>
+                <p>Discover amazing clothing from the ReWear community</p>
+            </div>
+
+            <div class="browse-layout">
+                <!-- Filters Sidebar -->
+                <div class="filters-sidebar">
+                    <div class="card">
+                        <div class="card-content filters-content">
+                            <div class="filters-header">
+                                <i class="fas fa-filter"></i>
+                                <h2>Filters</h2>
+                            </div>
+
+                            <div class="filters-form">
+                                <!-- Search -->
+                                <div class="form-group">
+                                    <label class="form-label">Search</label>
+                                    <div class="search-input">
+                                        <i class="fas fa-search"></i>
+                                        <input type="text" id="searchInput" class="form-input" placeholder="Search items...">
+                                    </div>
+                                </div>
+
+                                <!-- Category -->
+                                <div class="form-group">
+                                    <label class="form-label">Category</label>
+                                    <select id="categoryFilter" class="form-select">
+                                        <option value="all">All</option>
+                                        <option value="tops">Tops</option>
+                                        <option value="bottoms">Bottoms</option>
+                                        <option value="dresses">Dresses</option>
+                                        <option value="outerwear">Outerwear</option>
+                                        <option value="shoes">Shoes</option>
+                                        <option value="accessories">Accessories</option>
+                                    </select>
+                                </div>
+
+                                <!-- Condition -->
+                                <div class="form-group">
+                                    <label class="form-label">Condition</label>
+                                    <select id="conditionFilter" class="form-select">
+                                        <option value="all">All</option>
+                                        <option value="excellent">Excellent</option>
+                                        <option value="good">Good</option>
+                                        <option value="fair">Fair</option>
+                                    </select>
+                                </div>
+
+                                <!-- Size -->
+                                <div class="form-group">
+                                    <label class="form-label">Size</label>
+                                    <select id="sizeFilter" class="form-select">
+                                        <option value="all">All</option>
+                                        <option value="xs">XS</option>
+                                        <option value="s">S</option>
+                                        <option value="m">M</option>
+                                        <option value="l">L</option>
+                                        <option value="xl">XL</option>
+                                        <option value="xxl">XXL</option>
+                                    </select>
+                                </div>
+
+                                <!-- Featured Only -->
+                                <div class="form-group">
+                                    <div class="form-checkbox">
+                                        <input type="checkbox" id="featuredOnly">
+                                        <label for="featuredOnly">Featured items only</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Items Grid -->
+                <div class="items-section">
+                    <div class="items-header">
+                        <p class="items-count" id="itemsCount">Showing 0 of 0 items</p>
+                        <select id="sortBy" class="form-select sort-select">
+                            <option value="newest">Newest First</option>
+                            <option value="featured">Featured First</option>
+                            <option value="points-low">Points: Low to High</option>
+                            <option value="points-high">Points: High to Low</option>
+                        </select>
+                    </div>
+
+                    <div class="items-grid" id="itemsGrid">
+                        <!-- Items will be loaded dynamically -->
+                    </div>
+
+                    <div class="no-results hidden" id="noResults">
+                        <div class="no-results-content">
+                            <i class="fas fa-search"></i>
+                            <h3>No items found</h3>
+                            <p>Try adjusting your filters or search terms.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/browse.js"></script>
+</body>
+</html>

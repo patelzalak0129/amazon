@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReWear - Sustainable Fashion Exchange</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="nav-brand">
+                    <i class="fas fa-recycle"></i>
+                    <span>ReWear</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#browse" class="nav-link">Browse Items</a>
+                    <a href="login.html" class="btn btn-outline">Login</a>
+                    <a href="signup.html" class="btn btn-primary">Sign Up</a>
+                </div>
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Give Your Clothes a <span class="text-green">Second Life</span></h1>
+                <p class="hero-description">
+                    Join ReWear's sustainable fashion community. Exchange unused clothing through direct swaps or our
+                    point-based system. Reduce waste, save money, and discover unique pieces.
+                </p>
+                <div class="hero-actions">
+                    <a href="signup.html" class="btn btn-primary btn-lg">
+                        Start Swapping <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="browse.html" class="btn btn-outline btn-lg">Browse Items</a>
+                    <a href="list-item.html" class="btn btn-outline btn-lg">List an Item</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>How ReWear Works</h2>
+                <p>Simple, sustainable, and community-driven</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon bg-green">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Join the Community</h3>
+                    <p>Create your account and become part of our sustainable fashion community</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon bg-blue">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3>List & Swap</h3>
+                    <p>Upload your unused clothes and swap them for items you love</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon bg-purple">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Earn Points</h3>
+                    <p>Earn points for successful swaps and redeem them for premium items</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Items -->
+    <section class="featured-items">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Items</h2>
+                <p>Discover popular and newly listed garments</p>
+            </div>
+            <div class="carousel-container">
+                <div class="carousel" id="featuredCarousel">
+                    <div class="carousel-track">
+                        <!-- Items will be loaded dynamically -->
+                    </div>
+                </div>
+                <button class="carousel-btn carousel-prev" id="prevBtn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-btn carousel-next" id="nextBtn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="text-center">
+                <a href="browse.html" class="btn btn-outline btn-lg">
+                    View All Items <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">2,500+</div>
+                    <div class="stat-label">Items Exchanged</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">1,200+</div>
+                    <div class="stat-label">Active Members</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">15 tons</div>
+                    <div class="stat-label">Textile Waste Saved</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <i class="fas fa-recycle"></i>
+                        <span>ReWear</span>
+                    </div>
+                    <p>Making fashion more sustainable, one swap at a time.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Platform</h3>
+                    <ul>
+                        <li><a href="browse.html">Browse Items</a></li>
+                        <li><a href="list-item.html">List an Item</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#help">Help Center</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#safety">Safety Guidelines</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ReWear. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/carousel.js"></script>
+</body>
+</html>
